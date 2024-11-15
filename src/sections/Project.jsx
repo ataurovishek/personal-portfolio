@@ -1,5 +1,7 @@
-import darksaas from '../assets/images/dark-saas-landing-page.png';
-import lightsass from '../assets/images/light-saas-landing-page.png';
+// import darksaas from '../assets/images/dark-saas-landing-page.png';
+// import lightsass from '../assets/images/light-saas-landing-page.png';
+import Cara from '../assets/images/Cara.png';
+import Travelia from '../assets/images/Travelia.png';
 import aiStartup from '../assets/images/ai-startup-landing-page.png';
 // react icons 
 import { FaRegCheckCircle } from "react-icons/fa";
@@ -18,8 +20,8 @@ const portfolioInfo = [
             { title: "Improved site speed by 50%" },
             { title: "Increased mobile traffic by 35%" },
         ],
-        link: "https://youtu.be/4k7IdSLxh6w",
-        image: darksaas,
+        link: import.meta.env.VITE_GITHUB,
+        image: Cara,
     },
     {
         company: "Innovative Co",
@@ -30,8 +32,8 @@ const portfolioInfo = [
             { title: "Expanded customer reach by 35%" },
             { title: "Increased brand awareness by 15%" },
         ],
-        link: "https://youtu.be/7hi5zwO75yc",
-        image: lightsass,
+        link: import.meta.env.VITE_GITHUB,
+        image: Travelia,
     },
     {
         company: "Quantum Dynamics",
@@ -42,22 +44,22 @@ const portfolioInfo = [
             { title: "Improved site speed by 50%" },
             { title: "Increased mobile traffic by 35%" },
         ],
-        link: "https://youtu.be/Z7I5uSRHMHg",
+        link: import.meta.env.VITE_GITHUB,
         image: aiStartup,
     },
 ];
 const Project = () => {
     return (
-        <section className='pb-16 lg:py-24 md:py-24 sm:py-16'>
-            <div className="container">
-                <SectionHeader eyebrow="Real-World Results" title="Featured Projects" description="See how I transformed concepts into engaging digital experiences"/>
-               
+        <section className='pb-16 lg:py-24 md:py-24 sm:py-16 '>
+            <div className="container ">
+                <SectionHeader eyebrow="Real-World Results" title="Featured Projects" description="See how I transformed concepts into engaging digital experiences" />
+
                 <div className='md:mt-20 flex flex-col mt-10 gap-20'>
                     {
                         portfolioInfo.map((project) => (
-                            
-                            <Card key={project.title} className="px-8 pt-8 md:pt-12 pb-0 md:px-10 lg:pt-16 lg:px-20 border-2 border-white/10 sticky top-16">
-                                <div className="lg:grid lg:grid-cols-2 lg:gap-16">           
+
+                            <Card key={project.title} className="px-8 z-0 pt-8 md:pt-12 pb-0 md:px-10 lg:pt-16 lg:px-20 border-2 border-white/10 sticky top-16">
+                                <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                                     <div className='lg:pb-16'>
 
                                         <div className='bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest  text-sm    text-transparent bg-clip-text'>
@@ -82,14 +84,14 @@ const Project = () => {
                                         {/* this a tag will be changed later  */}
                                         <a href={project.link}>
                                             <button
-                                                className='bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center        gap-2 mt-8 md:w-auto px-8'>
+                                                className='bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center  gap-2 mt-8 md:w-auto px-8' onClick={()=>alert('Button Clicked')}>
                                                 <span>View live Site</span>
                                                 <RiArrowRightUpLine className='size-4' />
                                             </button>
                                         </a>
                                     </div>
                                     <div className='relative'>
-                                    <img src={project.image} alt={project.title} className='mt-8 -mb-4 md:mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none' />
+                                        <img src={project.image} alt={project.title} className='rounded-t-lg mt-8 -mb-4 md:mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none object-cover' />
                                     </div>
                                 </div>
 
